@@ -1,0 +1,13 @@
+<nav>
+  <ul>
+    <li><a class="home" routerLink="thieves" mat-button>Home</a></li>
+    <li><a routerLink="thieves/new" mat-button>Create User</a></li>
+  </ul>
+  <ul>
+    <li *ngIf="admin">
+      <span>Hi {{ admin?.displayName }}</span>
+      <button mat-button (click)="signout()">Logout</button>
+    </li>
+    <li><a *ngIf="!admin" mat-button (click)="login()">Login</a></li>
+  </ul>
+</nav>

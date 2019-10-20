@@ -1,0 +1,10 @@
+<mat-spinner *ngIf="isLoading" [diameter]="50"></mat-spinner>
+<div class="box"></div>
+<section class="userLists" *ngIf="!isLoading">
+  <app-thief-item
+    *ngFor="let user of users; let index = index"
+    [user]="user"
+    [index]="index"
+  >
+  </app-thief-item>
+</section>

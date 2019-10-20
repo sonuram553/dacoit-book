@@ -1,0 +1,90 @@
+<mat-progress-bar
+  mode="indeterminate"
+  *ngIf="isUpdatingUser"
+></mat-progress-bar>
+<mat-spinner *ngIf="isLoading" [diameter]="50"></mat-spinner>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+  <mat-form-field>
+    <input formControlName="name" matInput placeholder="Name *" />
+    <mat-error
+      *ngIf="userForm.controls.name.invalid && userForm.controls.name.touched"
+      >Please enter name</mat-error
+    >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input formControlName="age" type="number" matInput placeholder="Age *" />
+    <mat-error
+      *ngIf="userForm.controls.age.invalid && userForm.controls.age.touched"
+    >
+      {{ getErrorMsg(userForm.controls.age) }}
+    </mat-error>
+  </mat-form-field>
+
+  <section class="genderBox">
+    <label id="gender">Gender</label>
+    <mat-radio-group
+      formControlName="gender"
+      aria-labelledby="gender"
+      class="example-radio-group"
+    >
+      <mat-radio-button class="example-radio-button" value="male">
+        Male
+      </mat-radio-button>
+      <mat-radio-button class="example-radio-button" value="female">
+        Female
+      </mat-radio-button>
+    </mat-radio-group>
+  </section>
+
+  <mat-form-field>
+    <input formControlName="birthMark" matInput placeholder="Birth Marks" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      formControlName="photo"
+      type="url"
+      matInput
+      placeholder="Photo URL"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Select Location</mat-label>
+    <mat-select formControlName="location" matNativeControl>
+      <mat-option *ngFor="let location of locations" [value]="location">
+        {{ location | titlecase }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="description">
+    <textarea
+      rows="3"
+      formControlName="description"
+      matInput
+      placeholder="Description"
+    ></textarea>
+  </mat-form-field>
+
+  <section class="btn-group">
+    <button
+      class="submitBtn"
+      type="submit"
+      [disabled]="userForm.invalid"
+      mat-raised-button
+      color="accent"
+    >
+      {{ isEditMode ? "Update" : "Submit" }}
+    </button>
+    <button
+      type="button"
+      mat-stroked-button
+      color="primary"
+      (click)="onCancel()"
+    >
+      Cancel
+    </button>
+  </section>
+</form>

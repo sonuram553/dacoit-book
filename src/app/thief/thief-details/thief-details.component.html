@@ -1,0 +1,33 @@
+<mat-spinner *ngIf="isLoading" [diameter]="50"></mat-spinner>
+
+<section class="userDetails" *ngIf="!isLoading">
+  <header>
+    <img class="profilePic" [src]="user.photo" alt="Profile pic" />
+    <section>
+      <h1>{{ user.name | titlecase }}</h1>
+      <p>Age: {{ user.age }}</p>
+      <p>
+        <i class="material-icons"> room </i>
+        {{ user.location | titlecase }}
+      </p>
+      <p>
+        <i class="material-icons">date_range</i>
+        {{ formattedDate }}
+      </p>
+    </section>
+  </header>
+  <mat-divider></mat-divider>
+  <article>
+    <section>
+      <h4 class="title">Birth Marks:</h4>
+      <p>{{ user.birthMark }}</p>
+    </section>
+    <!-- <h3 class="title">No of Robbery</h3>
+    <h3 class="title">In Jail</h3>-->
+
+    <h4 class="description">Description</h4>
+    <p>
+      {{ user.description }}
+    </p>
+  </article>
+</section>

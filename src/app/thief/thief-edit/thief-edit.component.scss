@@ -1,0 +1,88 @@
+form {
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  margin: 0 auto 10px;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  > * {
+    width: 100%;
+  }
+}
+
+textarea {
+  line-height: 1.5;
+}
+
+::ng-deep .green-snackbar {
+  background: #007e33;
+  color: white;
+}
+
+mat-spinner {
+  margin: 100px auto 0;
+}
+
+mat-progress-bar {
+  width: 50%;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.description,
+.btn-group {
+  grid-column: 1 / span 2;
+}
+.genderBox {
+  align-self: center;
+}
+
+.example-radio-group {
+  margin-right: 50px;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.custodyChkBox {
+  margin-top: 100px;
+}
+
+#gender {
+  margin-right: 10px;
+}
+
+#gender,
+.example-radio-button {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+}
+button {
+  width: 30%;
+}
+.submitBtn {
+  margin-right: 8px;
+}
+
+@media (max-width: 800px) {
+  form {
+    width: 60%;
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  form {
+    width: 100%;
+    display: block;
+    padding: 0 15px 15px;
+    border: none;
+  }
+}

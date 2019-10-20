@@ -1,0 +1,36 @@
+<article class="listItem" (click)="onItemClicked()">
+  <img class="profilePic" [src]="user.photo" alt="Profile pic" />
+
+  <section class="header">
+    <h1>{{ user.name | titlecase }}</h1>
+    <p>Age:{{ user.age }}</p>
+    <p>
+      <i class="material-icons icons"> room </i>
+      {{ user.location | titlecase }}
+    </p>
+    <p>
+      <i class="material-icons icons">date_range</i>
+      {{ formattedDate }}
+    </p>
+    <section class="menuBtn" *ngIf="admin | async">
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+        (click)="onMenuClicked($event)"
+      >
+        <mat-icon class="moreIcon">more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="onEdit()">
+          <mat-icon>create</mat-icon>
+          <span>Edit</span>
+        </button>
+        <button mat-menu-item (click)="onDelete()">
+          <mat-icon>delete</mat-icon>
+          <span>Delete</span>
+        </button>
+      </mat-menu>
+    </section>
+  </section>
+</article>
