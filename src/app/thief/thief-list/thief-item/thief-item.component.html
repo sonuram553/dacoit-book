@@ -10,7 +10,7 @@
     </p>
     <p>
       <i class="material-icons icons">date_range</i>
-      {{ user.date | date: mediumDate }}
+      {{ user.date | date: "MMM d, y" }}
     </p>
     <section class="menuBtn" *ngIf="admin | async">
       <button
