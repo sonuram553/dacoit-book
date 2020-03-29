@@ -1,4 +1,4 @@
-import { Injectable, OnInit, OnDestroy } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { tap } from "rxjs/operators";
 import { User, Admin } from "./data.model";
@@ -6,7 +6,7 @@ import { User, Admin } from "./data.model";
 @Injectable({
   providedIn: "root"
 })
-export class DataService implements OnInit, OnDestroy {
+export class DataService {
   users: User[];
   private userCollectionUrl = "https://vast-temple-84975.herokuapp.com/users/"; //"http://localhost:3000/users/";
   private adminCollectionUrl = "https://vast-temple-84975.herokuapp.com/admin/"; //"http://localhost:3000/admin/";
@@ -49,6 +49,4 @@ export class DataService implements OnInit, OnDestroy {
       userId: userId
     });
   }
-
-  ngOnDestroy() {}
 }

@@ -23,8 +23,8 @@ export class AuthService {
       .signInWithPopup(provider)
       .then(admin => {
         console.log(admin);
+        
         if (admin.additionalUserInfo.isNewUser) {
-          console.log("New user");
           const newAdmin = { _id: admin.user.uid, users: [] };
           this.dataService.postAdmin(newAdmin).subscribe(
             result => {

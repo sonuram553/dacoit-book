@@ -1,7 +1,7 @@
 <nav>
   <ul>
     <li><a class="home" routerLink="thieves" mat-button>Home</a></li>
-    <li><a routerLink="thieves/new" mat-button>Create User</a></li>
+    <li><a routerLink="thieves/new" mat-button *ngIf="admin">Create User</a></li>
   </ul>
   <ul>
     <li *ngIf="admin">

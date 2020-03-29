@@ -47,14 +47,6 @@ Thumbs.db
 
 #Firebase
 .firebase/
-.firebaserc
-firebase.json
 
 #evironments folder
 /src/environments/
-
-#tsconfig file
-tsconfig.app.json
-tsconfig.json
-tsconfig.spec.json
-tslint.json
