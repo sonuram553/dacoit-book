@@ -47,8 +47,6 @@ Thumbs.db
 
 #Firebase
 .firebase/
-.firebaserc
-firebase.json
 
 #evironments folder
 /src/environments/
